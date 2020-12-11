@@ -32,6 +32,7 @@ router.get('/:userId', async (req, res) => {
 /* CREATE a user */
 router.post('/new', async (req, res) => {
   const user = req.body;
+  console.log('USER:',user);
   try {
     const newUser = await UserController.create(user);
     if (newUser) return res.json(newUser);
